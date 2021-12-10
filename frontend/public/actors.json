@@ -1,0 +1,58 @@
+{
+  "actors": [
+    {
+      "name": "Aapoph Serpentfolk",
+      "family": "Serpentfolk",
+      "rarity": "Uncommon",
+      "size": "Medium",
+      "type": "Humanoid",
+      "traits": ["Humanoid", "Mutant", "Serpentfolk"],
+      "level": 3
+    },
+    {
+      "name": "Adult Black Dragon",
+      "family": "Dragon, Black",
+      "rarity": "Common",
+      "size": "Large",
+      "type": "Dragon",
+      "traits": ["Acid", "Amphibious", "Dragon"],
+      "level": 11
+    },
+    {
+      "name": "Adult Brass Dragon",
+      "family": "Dragon, Brass",
+      "rarity": "Common",
+      "size": "Large",
+      "type": "Dragon",
+      "traits": ["Dragon", "Fire"],
+      "level": 11
+    },
+    {
+      "name": "Dust Mephit",
+      "family": "Elemental, Mephit",
+      "rarity": "Uncommon",
+      "size": "Small",
+      "type": "Elemental",
+      "traits": ["Air", "Earth", "Elemental"],
+      "level": 1
+    },
+    {
+      "name": "Earth Mephit",
+      "family": "Elemental, Mephit",
+      "rarity": "Common",
+      "size": "Small",
+      "type": "Elemental",
+      "traits": ["Earth", "Elemental"],
+      "level": 1
+    },
+    {
+      "name": "Fire Mephit",
+      "family": "Elemental, Mephit",
+      "rarity": "Common",
+      "size": "Small",
+      "type": "Elemental",
+      "traits": ["Elemental", "Fire"],
+      "level": 1
+    }
+  ]
+}

@@ -1,22 +1,18 @@
 <template>
   <q-page class="row items-center justify-evenly">
-    <example-component
-      title="Example component"
-      active
-      :todos="todos"
-      :meta="meta"
-    ></example-component>
+    <ActorSelectionList />
   </q-page>
 </template>
 
 <script lang="ts">
 import { Todo, Meta } from 'components/models';
-import ExampleComponent from 'components/CompositionComponent.vue';
 import { defineComponent, ref } from 'vue';
+import ActorSelectionList from 'components/ActorSelectionList.vue';
 
 export default defineComponent({
   name: 'PageIndex',
-  components: { ExampleComponent },
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+  components: { ActorSelectionList },
   setup() {
     const todos = ref<Todo[]>([
       {
