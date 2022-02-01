@@ -1,14 +1,5 @@
 import { LooseDictionary } from 'quasar/dist/types/ts-helpers';
 
-export interface Todo {
-  id: number;
-  content: string;
-}
-
-export interface Meta {
-  totalCount: number;
-}
-
 export interface Column {
   name: string;
   label: string;
@@ -28,6 +19,7 @@ export interface Column {
   classes?: string | ((row: LooseDictionary) => string);
   headerStyle?: string;
   headerClasses?: string;
+  filterType?: string;
 }
 
 export interface Actor {
@@ -38,4 +30,28 @@ export interface Actor {
   type: string;
   traits: string[];
   level: number;
+  xp?: number;
+}
+
+export interface SelectedActor extends Actor {
+  id: string;
+  count: number;
+  xpTotal?: number;
+}
+
+export interface PartyMember {
+  id: string;
+  name: string;
+  level: number | string;
+}
+
+
+export interface Filters {
+  name: string | null;
+  family: string[] | null;
+  rarity: string[] | null;
+  size: string[] | null;
+  type: string[] | null;
+  traits: string[] | null;
+  level: { min: number; max: number };
 }

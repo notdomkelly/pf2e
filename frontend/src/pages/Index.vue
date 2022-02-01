@@ -1,45 +1,45 @@
 <template>
-  <q-page class="row items-center justify-evenly">
-    <ActorSelectionList />
+  <q-page class="row items-start justify-evenly">
+    <div class="column col-8 q-pa-md" style="height: 90vh">
+      <EncounterBuilderSelectionList />
+    </div>
+    <div class="column col q-pa-md" style="height: 90vh">
+      <q-card flat bordered class="EncounterCard">
+        <q-card-section>
+          <div class="text-h6">Encounter</div>
+          Total XP: {{ xpTotal }}
+          <br />
+          Encounter Difficulty: {{ difficulty }}
+        </q-card-section>
+        <q-separator inset />
+
+        <EncounterBuilderPartyList />
+
+        <q-separator inset />
+
+        <EncounterBuilderEnemyList />
+      </q-card>
+    </div>
   </q-page>
 </template>
 
 <script lang="ts">
-import { Todo, Meta } from 'components/models';
-import { defineComponent, ref } from 'vue';
-import ActorSelectionList from 'components/ActorSelectionList.vue';
+import { computed, defineComponent } from 'vue';
+import { useStore } from 'src/store';
+import EncounterBuilderSelectionList from 'components/EncounterBuilderSelectionList.vue';
+import EncounterBuilderEnemyList from 'components/EncounterBuilderEnemyList.vue';
+import EncounterBuilderPartyList from 'components/EncounterBuilderPartyList.vue';
 
 export default defineComponent({
-  name: 'PageIndex',
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-  components: { ActorSelectionList },
+  name: 'EncounterBuilderIndex',
+  components: { EncounterBuilderPartyList, EncounterBuilderEnemyList, EncounterBuilderSelectionList },
   setup() {
-    const todos = ref<Todo[]>([
-      {
-        id: 1,
-        content: 'ct1'
-      },
-      {
-        id: 2,
-        content: 'ct2'
-      },
-      {
-        id: 3,
-        content: 'ct3'
-      },
-      {
-        id: 4,
-        content: 'ct4'
-      },
-      {
-        id: 5,
-        content: 'ct5'
-      }
-    ]);
-    const meta = ref<Meta>({
-      totalCount: 1200
-    });
-    return { todos, meta };
+    const store = useStore();
+
+    return {
+      xpTotal: computed(() => store.getters['encounterBuilder/xpTotal']),
+      difficulty: computed(() => store.getters['encounterBuilder/encounterDifficulty']),
+    };
   }
 });
 </script>
