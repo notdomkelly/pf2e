@@ -1,5 +1,5 @@
 from app.main import db
-from sqlalchemy.types.postgresql import ARRAY
+from sqlalchemy.dialects.postgresql import ARRAY
 
 class Actor(db.Model):
     __tablename__ = 'actor'
